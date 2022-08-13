@@ -7,9 +7,6 @@ const galleryItems = [
     { id: 6, path: 'images/garlicboy.png', description: 'much to stink about', title: 'garlic boy', likes: 0},
     { id: 7, path: 'images/image.png', description: 'when i get my certificate in software engineering so i am legally allowed to play engineer in team fortress two, but my buddy got autobalanced to the other team and insists on backstabbing me as spy', 
              title: 'emgineer', likes: 0}
-
-
-
 ];
 
 module.exports = galleryItems;
