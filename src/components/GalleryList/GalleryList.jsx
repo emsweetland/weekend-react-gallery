@@ -1,7 +1,11 @@
 //GalleryList is like the table of the database
     //via App.jsx //galleryList is the array, countLikes contains axios PUT function
-function GalleryList({ galleryList, countLikes}) {
 
+import GalleryItem from '../GalleryItem/GalleryItem'
+
+
+function GalleryList({ galleryList, countLikes}) {
+//GalleryList will map out each image in the array by id along with it's like count
     return(
         <div>
         <h2>my gallery</h2>
@@ -11,7 +15,7 @@ function GalleryList({ galleryList, countLikes}) {
                     <th>a photo :)</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody> 
                 {galleryList.map((image) => (
                     <GalleryItem
                         key={image.id}
