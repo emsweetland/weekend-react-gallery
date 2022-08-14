@@ -5,9 +5,8 @@ function countLikes (){
 function GalleryItem({image}) {
     return (
         <tr key={image.id}>
-            <td><img src={image.path}/>
-                </td>
-            <td>{image.title}{image.desc}{image.likes}</td>
+            <td><img src={image.path}/></td>
+            <td><p>{image.title}{image.desc}{image.likes}</p></td>
             <td>
                 <button onClick={() => (console.log('clicked'))}>Like!</button>
             </td>
