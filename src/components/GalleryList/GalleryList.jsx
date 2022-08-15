@@ -19,8 +19,7 @@ function GalleryList({ galleryList, countLikes}) {
                 {galleryList.map((image) => (
                     <GalleryItem
                         key={image.id}
-                        image={image}
-                        countLikes={countLikes}/>
+                        image={image}/>
                 ))} 
             </tbody>
         </table>

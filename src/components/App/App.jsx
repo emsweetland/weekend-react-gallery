@@ -15,7 +15,7 @@ function App() {
     getGallery();
   }, []); //square brackets keep away endless loop
 
-  //GET via axios... ty getGallery
+  //GET via axios...
   const getGallery = () => {
     axios.get('/gallery') //via /gallery
     .then((response) => {
@@ -27,14 +27,12 @@ function App() {
     });
   }
 
-
+// where the appending happens
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
         <GalleryList
           galleryList={galleryList}/>
       </div>
