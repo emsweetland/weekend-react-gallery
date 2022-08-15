@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css'; //for style
 import axios from 'axios'; //for routing
 import GalleryList from '../GalleryList/GalleryList'
@@ -13,7 +13,7 @@ function App() {
   // run when component is first put on DOM
     useEffect(() => {
     getGallery();
-  }, []); //square brackets keep away endless loop
+  }, []); //square brackets keep away endless loop // run once at load then never again
 
   //GET via axios...
   const getGallery = () => {
@@ -34,7 +34,8 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <GalleryList
-          galleryList={galleryList}/>
+          list={galleryList}
+          refreshData={getGallery}/>
       </div>
     );
 }

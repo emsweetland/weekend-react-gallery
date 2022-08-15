@@ -4,7 +4,7 @@
 import GalleryItem from '../GalleryItem/GalleryItem'
 
 
-function GalleryList({ galleryList, countLikes}) {
+function GalleryList( { list, refreshData } ) {
 //GalleryList will map out each image in the array by id along with it's like count
     return(
         <div>
@@ -16,7 +16,7 @@ function GalleryList({ galleryList, countLikes}) {
                 </tr>
             </thead>
             <tbody> 
-                {galleryList.map((image) => (
+                {list.map((image) => (
                     <GalleryItem
                         key={image.id}
                         image={image}/>

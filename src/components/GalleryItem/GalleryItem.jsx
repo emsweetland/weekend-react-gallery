@@ -1,16 +1,15 @@
 import {useEffect, useState} from 'react';
 import axios from 'axios';
+import './GalleryItem.css'
 
-function GalleryItem({image}) {
+function GalleryItem({image, refreshData}) {
 
-    function countLikes (image, getGallery){
-        image.likes += 1;
-        console.log('clicked like')
-        console.log(image.likes)
+    const [showDescription, setShowDescription] = useState(false)
+
+    function countLikes (image){
         axios.put('gallery/like/:id', {likes: image.likes})
         .then ((response) => {
-            console.log(image.likes);
-            getGallery();
+      
         }).catch((err) => {
             alert('couldnt like');
             console.log('uh oh', err);
@@ -19,13 +18,19 @@ function GalleryItem({image}) {
 
     //sends appending info to be used in GalleryList
     return (
-        <tr key={image.id}>
-            <td><img src={image.path}/></td>
-            <td><p>{image.title}{image.desc}{image.likes}</p></td>
-            <td>
-                <button onClick={() => countLikes(image)}>Like!</button>
-            </td>
-        </tr>
+        <div onClick={() => setShowDescription(!showDescription)}>
+            {showDescription ? (
+                <h6>{image.description}</h6>
+                ) : (
+                <img className="galleryItem" src={image.path}/>
+                )} 
+
+
+
+            <p>{image.title}{image.likes}</p>
+            <button onClick={() => countLikes(image)}>Like!</button>
+
+        </div>
     )
 }
 
